@@ -1,9 +1,13 @@
+import { Client } from './Client';
+import { Vol } from './Vol';
+
 export class Reservation {
     
     constructor( 
-    public id_vol : number,
-    public id_client : number,
-    public date_reservation : Date,
-    public nb_place : number,
+    public vol : Vol,
+    public client : Client,
+    public dateReservation : Date,
+
+    public id?:number,
 ){ }
 }

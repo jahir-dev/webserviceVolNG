@@ -1,27 +1,27 @@
 <div class="row">
   <div class="col-10 offset-md-1">
-    <table class="table mt-5 mr-5">
+      <br>
+      <h5>Liste des reservations :</h5>
+    <table class="table mt-4 mr-5">
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">id_vol</th>
+          <th scope="col">Ville Départ - Arrivé</th>
           <th scope="col">Client</th>
-          <th scope="col">Place</th>
           <th scope="col">Action</th>
           
         </tr>
       </thead>
       <tbody>
-        <!-- <tr *ngFor="let vol of vols, let i = index">
+         <tr *ngFor="let reservation of reservations, let i = index">
           <th scope="row">{{ i }}</th>
-          <td>{{ reservation.vol.id }}</td>
-          <td>{{ reservation.client.nom }}</td>
-          <td>{{ reservation.nbr_place }}</td>
+          <td>{{ reservation.vol.ville_depart }} - {{ reservation.vol.ville_arrivee }}</td>
+          <td>{{ reservation.client.nom }} {{ reservation.client.nom }} - {{ reservation.client.cin }}</td>
           <td> 
             <a class="btn btn-info" href="">Modiefier</a> 
-            <a class="btn btn-info" href="">Supprimer</a> 
+            <button class="btn ml-1" (click)="deleteReservation(reservation.id)">Delete</button>
           </td>
-        </tr> -->
+        </tr>
       </tbody>
     </table>
   </div>

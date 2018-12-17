@@ -1,7 +1,7 @@
 import { Time } from '@angular/common';
 
 export class Vol {
-    constructor( 
+    constructor(
     public ville_depart : string,
     public ville_arrivee : string,
     public prix : number,
@@ -13,5 +13,6 @@ export class Vol {
     public date_arrivee? : Date,
     public heur_depart? : Time,
     public heur_arrivee? : Time,
+    public id?: number,
 ){ }
 }

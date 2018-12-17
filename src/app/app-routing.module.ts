@@ -14,7 +14,7 @@ const routes: Routes = [
     component: ListReservationComponent
   },
   {
-    path:'vols/reserver',
+    path:'vol/:id/reserver',
     component:AddReservationComponent
   }
 ];

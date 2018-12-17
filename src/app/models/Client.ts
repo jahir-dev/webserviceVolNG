@@ -6,12 +6,10 @@ export class Client {
     public cin : Date,
     public nom : Date,
     public prenom : Time,
+    public num_passeport : String,
     public sexe : Time,
     public date_naissance : string,
-    public ville_arrivee : string,
-    public telephone : number,
-    public mail : number,
-    public login : number,
-    public password : number,
+    public telephone : String,
+    public mail : String,
 ){ }
 }

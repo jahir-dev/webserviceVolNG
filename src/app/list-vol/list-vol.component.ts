@@ -26,6 +26,14 @@ export class ListVolComponent implements OnInit {
       });
   }
 
-
-  
+  deleteVol(id) {
+    console.log('dans delete ');
+        this.volservice.deletevol(id)
+          .subscribe(res => {
+            this.vols = this.vols.filter(obj => obj.id !== id);
+            this.getVols();
+          }, err => {
+            console.log(err);
+          });
+      }
 }

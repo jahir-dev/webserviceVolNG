@@ -1,11 +1,17 @@
 <div class="row">
   <div class="col-10 offset-md-1">
-    <table class="table mt-5 mr-5">
+    <br>
+    <h5 class="pull-left">Liste des vols :</h5>
+    <a class="btn btn-info ml-2 pull-right" href="">Ajouter un Vol</a> 
+    <br>
+    <table class="table mt-4 mr-5">
       <thead>
         <tr>
           <th scope="col">#</th>
           <th scope="col">Ville départ</th>
           <th scope="col">Ville arrivée</th>
+          <th scope="col">Date départ</th>
+          <th scope="col">Date retour</th>
           <th scope="col">durée</th>
           <th scope="col">Prix</th>
           <th scope="col">Etat</th>
@@ -18,13 +24,15 @@
           <th scope="row">{{ i }}</th>
           <td>{{ vol.ville_depart }}</td>
           <td>{{ vol.ville_arrivee }}</td>
+          <td>{{ vol.date_depart | date}}</td>
+          <td>{{ vol.date_arrivee | date}}</td>
           <td>{{ vol.duree }}</td>
           <td>{{ vol.prix }}</td>
           <td>{{ vol.etat }}</td>
           <td>
             
-            <button *ngIf="vol.etat == 'dispo'" class="btn btn-info" href="" >Réserver</button>
-            <button *ngIf="vol.etat != 'dispo'" class="btn btn-info" href="" disabled>Réserver</button> 
+            <button class="btn " [ngClass]="{'btn-danger': !vol.etat, 'btn-success': vol.etat}" [routerLink]="['/vol', vol.id_vol, 'reserver']" [disabled]="!vol.etat">Réserver</button>
+            <button class="btn ml-1" (click)="deleteVol(vol.id_vol)" [disabled]="!vol.etat">Delete</button>
           </td>
         </tr>
       </tbody>
